@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -111,13 +117,26 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\JsonController.cs" />
+    <Compile Include="Models\Contato.cs" />
+    <Compile Include="Models\ContatoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\appRoute.js" />
+    <Content Include="App\contato\controller\contatoController.js" />
+    <Content Include="App\contato\html\contatoForm.html" />
+    <Content Include="App\contato\html\contatoList.html" />
+    <Content Include="App\contato\html\deleteModal.html" />
+    <Content Include="App\contato\service\contatoDataService.js" />
+    <Content Include="App\home\sobre.html" />
+    <Content Include="App\home\index.html" />
+    <Content Include="App\tutorialApp.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.footer.bottom.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -125,6 +144,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Angular1.3.5\angular-animate.js" />
+    <Content Include="Scripts\Angular1.3.5\angular-resource.js" />
+    <Content Include="Scripts\Angular1.3.5\angular-route.js" />
+    <Content Include="Scripts\Angular1.3.5\angular-sanitize.js" />
+    <Content Include="Scripts\Angular1.3.5\angular-ui-bootstrap.js" />
+    <Content Include="Scripts\Angular1.3.5\angular.js" />
+    <Content Include="Scripts\Angular1.3.5\Plugins\loading-bar.js" />
+    <Content Include="Scripts\Angular1.3.5\Plugins\toaster.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -149,13 +176,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

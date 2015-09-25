@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="tutorialApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +16,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button>x
                     @Html.ActionLink("Aplicação AngularJS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                        <li><a href="#/">Inicio</a></li>
+                        <li><a href="#/contatos">Contatos</a></li>
+                        <li><a href="#/sobre">Sobre</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container body-content">
             @RenderBody()
-        </div>    
+        </div>
         <footer>
             <div class="container">
                 <a href="#/">Inicio</a> <span>|</span>
@@ -39,8 +40,10 @@
             </div>
         </footer>
     </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularJS")
+    @Scripts.Render("~/bundles/tutorialApp")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

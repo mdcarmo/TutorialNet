@@ -1,0 +1,77 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"><h4>Lista de contatos</h4></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="col-md-2">Itens por página:</label>
+                    <div class="col-md-2">
+                        <select ng-model="entryLimit" class="form-control">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" id="searchText" class="form-control pull-right" placeholder="Procurar por..." ng-model="search_txt">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="text-muted glyphicon glyphicon-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" href="#/contatos/novocontato"><i class="glyphicon glyphicon-file"></i> Novo contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4">
+                Filtrado <b>{{ filtered.length }}</b> de <b>{{ contatos.length}}</b> contatos no total.
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12" ng-show="filtered.length > 0">
+                <table class="table table-hover table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr class="info">
+                            <td>Nome <a title="Ordene pelo nome" ng-click="sort_by('nome');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>SobreNome <a title="Ordene pelo sobrenome" ng-click="sort_by('sobrenome');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>Email <a title="Ordene pelo email" ng-click="sort_by('email');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>Celular <a title="Ordene pelo telefone" ng-click="sort_by('telefone');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>Celular <a title="Ordene pelo endereco" ng-click="sort_by('endereco');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>Editar</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="contato in filtered = (contatos | filter:search_txt | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                            <td>{{contato.nome}}</td>
+                            <td>{{contato.sobrenome}}</td>
+                            <td>{{contato.email}}</td>
+                            <td>{{contato.telefone}}</td>
+                            <td>{{contato.endereco}}</td>
+                            <td>
+                                <a class="btn btn-primary" href="#/contatos/{{contato.id}}">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12" ng-show="filtered.length > 0">
+                <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filtered.length" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div>
+            </div>
+            <div class="col-md-12" ng-show="filtered.length == 0">
+                <div class="col-md-12 alert alert-danger">
+                    Não existe contatos para os filtros selecionados
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
