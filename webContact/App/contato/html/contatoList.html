@@ -44,17 +44,17 @@
                             <td>SobreNome <a title="Ordene pelo sobrenome" ng-click="sort_by('sobrenome');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
                             <td>Email <a title="Ordene pelo email" ng-click="sort_by('email');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
                             <td>Celular <a title="Ordene pelo telefone" ng-click="sort_by('telefone');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
-                            <td>Celular <a title="Ordene pelo endereco" ng-click="sort_by('endereco');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
+                            <td>Endereço <a title="Ordene pelo endereco" ng-click="sort_by('endereco');"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a></td>
                             <td>Editar</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="contato in filtered = (contatos | filter:search_txt | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-                            <td>{{contato.nome}}</td>
-                            <td>{{contato.sobrenome}}</td>
-                            <td>{{contato.email}}</td>
-                            <td>{{contato.telefone}}</td>
-                            <td>{{contato.endereco}}</td>
+                            <td>{{contato.Nome}}</td>
+                            <td>{{contato.SobreNome}}</td>
+                            <td>{{contato.Email}}</td>
+                            <td>{{contato.Telefone}}</td>
+                            <td>{{contato.Endereco}}</td>
                             <td>
                                 <a class="btn btn-primary" href="#/contatos/{{contato.id}}">
                                     <i class="glyphicon glyphicon-edit"></i>

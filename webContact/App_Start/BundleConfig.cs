@@ -27,7 +27,9 @@ namespace webContact
                       "~/Scripts/Angular1.3.5/angular-animate.js",
                       "~/Scripts/Angular1.3.5/angular-ui-bootstrap.js",
                       "~/Scripts/Angular1.3.5/Plugins/loading-bar.js",
-                      "~/Scripts/Angular1.3.5/Plugins/toaster.js"));
+                      "~/Scripts/Angular1.3.5/Plugins/toaster.js",
+                      "~/Scripts/Angular1.3.5/Plugins/angular-md5.js",
+                      "~/Scripts/Angular1.3.5/Plugins/angular-gravatar.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/tutorialApp").Include(
                        "~/App/tutorialApp.js",

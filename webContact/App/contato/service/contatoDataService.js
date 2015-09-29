@@ -79,9 +79,9 @@ function ($http, $q) {
 
     //Expose methods and fields through revealing pattern
     return {
-        contacts: _contacts,
+        contatos: _contacts,
         getContacts: _getContacts,
-        addContact: _addContact,
+        addContato: _addContact,
         updateContact: _updateContact,
         deleteContact: _deleteContact,
         findContactById: _findContactById

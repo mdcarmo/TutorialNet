@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace webContact.Models
 {
@@ -12,6 +13,11 @@ namespace webContact.Models
         }
 
         public DbSet<Contato> Contatos { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 
     public class ContatoContextInitializer : DropCreateDatabaseIfModelChanges<ContatoContext>

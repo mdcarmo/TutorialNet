@@ -1,6 +1,7 @@
 ﻿//use 'strict';
-var tutorialApp = angular.module('tutorialApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'toaster']);
-
+var tutorialApp = angular.module('tutorialApp', ['ngRoute', 'ngResource',
+                                                 'ui.bootstrap','chieffancypants.loadingBar',
+                                                 'ngAnimate','toaster']);
 tutorialApp.filter('startFrom', function () {
     return function (input, start) {
         if (input) {
