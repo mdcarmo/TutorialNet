@@ -1,29 +1,30 @@
 ﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using webContact.Helpers;
 using webContact.Models;
 
 namespace webContact.Controllers
 {
-    public class ContatoController : Controller
+    public class ContactController : JsonController
     {
-        private ContatoContext ContatosDB = new ContatoContext();
+        private ContactContext ContactsDB = new ContactContext();
 
-        #region [ GetContatos ]
-        public ActionResult GetContatos()
+        #region [ GetContacts ]
+        public ActionResult GetContacts()
         {
-            var contatos = ContatosDB.Contatos;
+            var contatos = ContactsDB.Contacts;
             return Json(contatos, JsonRequestBehavior.AllowGet);
         } 
         #endregion
 
-        #region [ AddContato ]
-        public ActionResult AddContato(Contato entity)
+        #region [ AddContact ]
+        public ActionResult AddContact(Contact entity)
         {
             try
             {
-                ContatosDB.Contatos.Add(entity);
-                ContatosDB.SaveChanges();
+                ContactsDB.Contacts.Add(entity);
+                ContactsDB.SaveChanges();
                 return new HttpStatusCodeResult(HttpStatusCode.Created);
             }
             catch
@@ -33,13 +34,13 @@ namespace webContact.Controllers
         } 
         #endregion
 
-        #region [ UpdateContato ]
-        public ActionResult UpdateContato(Contato entity)
+        #region [ UpdateContact ]
+        public ActionResult UpdateContact(Contact entity)
         {
             try
             {
-                ContatosDB.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-                ContatosDB.SaveChanges();
+                ContactsDB.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                ContactsDB.SaveChanges();
                 return new HttpStatusCodeResult(HttpStatusCode.Accepted);
             }
             catch
@@ -49,14 +50,14 @@ namespace webContact.Controllers
         } 
         #endregion
 
-        #region [ DeleteContato ]
-        public ActionResult DeleteContato(int id)
+        #region [ DeleteContact ]
+        public ActionResult DeleteContact(int id)
         {
-            var entityBd = ContatosDB.Contatos.First(r => r.Id == id);
+            var entityBd = ContactsDB.Contacts.First(r => r.Id == id);
             try
             {
-                ContatosDB.Contatos.Remove(entityBd);
-                ContatosDB.SaveChanges();
+                ContactsDB.Contacts.Remove(entityBd);
+                ContactsDB.SaveChanges();
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
             catch

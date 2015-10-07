@@ -4,23 +4,23 @@
         templateUrl: "/app/home/index.html"
     }),
 
-    $routeProvider.when('/sobre', {
-        templateUrl: "app/home/sobre.html"
+    $routeProvider.when('/about', {
+        templateUrl: "app/home/about.html"
     }),
 
-    $routeProvider.when('/contatos', {
-        templateUrl: "app/contato/html/contatoList.html",
-        controller: "contatoController"
+    $routeProvider.when('/contacts', {
+        templateUrl: "app/contact/html/contactsList.html",
+        controller: "contactController"
     }),
 
-    $routeProvider.when('/contatos/novocontato', {
-        templateUrl: "app/contato/html/contatoForm.html",
-        controller: "contatoAddController"
+    $routeProvider.when('/contacts/newcontact', {
+        templateUrl: "app/contact/html/contactForm.html",
+        controller: "contactAddController"
     }),
 
-    $routeProvider.when('/contatos/:id', {
-        templateUrl: "app/contato/html/contatoForm.html",
-        controller: "contatoEditController"
+    $routeProvider.when('/contacts/:id', {
+        templateUrl: "app/contact/html/contactForm.html",
+        controller: "contactEditController"
     }),
 
     $routeProvider.otherwise({

@@ -1,54 +1,55 @@
 ﻿<div class="panel panel-primary">
     <div class="panel-heading"><h4>Formulário de Contato</h4></div>
     <div class="panel-body">
-        <form class="form-horizontal" role="form" id="contatoForm" name="contatoForm">
+        <form class="form-horizontal" role="form" id="contactForm" name="contactForm">
             <div class="form-group">
                 <label for="firstName" class="col-md-2 control-label">Nome:</label>
                 <div class="col-md-6">
-                    <input type="text" id="nome" name="nome" class="form-control" ng-model="contato.nome" ng-required="true" placeholder="Nome" />
+                    <input type="text" id="firstName" name="firstName" class="form-control"
+                           ng-model="contact.firstName" ng-required="true" placeholder="Nome" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="lastName" class="col-sm-2 control-label">SobreNome:</label>
                 <div class="col-sm-6">
-                    <input type="text" id="sobrenome" name="sobrenome" class="form-control"
-                           ng-model="contato.sobrenome" ng-required="true" placeholder="Sobrenome" />
+                    <input type="text" id="lastName" name="lastName" class="form-control"
+                           ng-model="contact.lastName" ng-required="true" placeholder="Sobrenome" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">E-mail:</label>
                 <div class="col-sm-6">
                     <input type="email" id="email" name="email" class="form-control"
-                           ng-model="contato.email" ng-required="true" placeholder="E-mail" />
+                           ng-model="contact.email" ng-required="true" placeholder="E-mail" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="mobile" class="col-sm-2 control-label">Telefone:</label>
+                <label for="phone" class="col-sm-2 control-label">Telefone:</label>
                 <div class="col-sm-2">
-                    <input type="text" id="telefone" name="telefone" class="form-control"
-                           ng-model="contato.telefone" placeholder="Telefone" />
+                    <input type="text" id="phone" name="phone" class="form-control"
+                           ng-model="contact.phone" placeholder="Telefone" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="mobile" class="col-sm-2 control-label">Endereço:</label>
+                <label for="address" class="col-sm-2 control-label">Endereço:</label>
                 <div class="col-sm-6">
-                    <input type="text" id="mobile" name="mobile" class="form-control"
-                           ng-model="contato.endereco" placeholder="Endereço" />
+                    <input type="text" id="address" name="address" class="form-control"
+                           ng-model="contact.address" placeholder="Endereço" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-4 col-md-offset-3 col-sm-3 col-sm-offset-3 ">
                     <button id="cancelSave" name="cancelSave" class="btn btn-warning"
-                            ng-click="cancelar()" formnovalidate>
+                            ng-click="cancel()" formnovalidate>
                         <i class="glyphicon glyphicon-thumbs-down"></i> Cancelar
                     </button>
                     <button id="submitButton" name="submitButton" class="btn btn-primary"
-                            ng-click="salvaContato()">
+                            ng-click="saveContact()">
                         <i class="glyphicon glyphicon-thumbs-up"></i> Salvar
                     </button>
                     <button id="deleteButton" name="submitForm" class="btn btn-danger"
                             data-ng-show="isEdit"
-                            ng-click="modalDelete('md',contato)">
+                            ng-click="modalDelete('md',contact)">
                         <i class="glyphicon glyphicon-trash"></i> Deletar
                     </button>
                 </div>

@@ -1,6 +1,6 @@
 ﻿<div class="modal-header">
     <button type="button" class="close" ng-click="cancel()" aria-hidden="true">&times;</button>
-    <h3 class="modal-title">Deletar contato: {{contato.nome}} {{contato.sobrenome}} ?</h3>
+    <h3 class="modal-title">Deletar {{contact.firstName}} {{contact.lastName}}</h3>
 </div>
 <div class="modal-body">
     <div class="container">
@@ -8,31 +8,31 @@
             <div class="form-group">
                 <label class="control-label">Nome</label>
                 <div class="controls">
-                    <input type="text" data-ng-model="contato.nome" class="form-control" ng-disabled="true">
+                    <input type="text" data-ng-model="contact.firstName" class="form-control" ng-disabled="true">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Last Name</label>
                 <div class="controls">
-                    <input type="text" data-ng-model="contato.sobrenome" class="form-control" ng-disabled="true">
+                    <input type="text" data-ng-model="contact.lastname" class="form-control" ng-disabled="true">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Email</label>
                 <div class="controls">
-                    <input type="text" data-ng-model="contato.email" class="form-control" ng-disabled="true">
+                    <input type="text" data-ng-model="contact.email" class="form-control" ng-disabled="true">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Telefone</label>
                 <div class="controls">
-                    <input type="text" data-ng-model="contato.telefone" class="form-control" ng-disabled="true">
+                    <input type="text" data-ng-model="contact.phone" class="form-control" ng-disabled="true">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Endereço</label>
                 <div class="controls">
-                    <input type="text" data-ng-model="contato.endereco" class="form-control" ng-disabled="true">
+                    <input type="text" data-ng-model="contact.address" class="form-control" ng-disabled="true">
                 </div>
             </div>
         </form>

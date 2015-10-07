@@ -1,10 +1,10 @@
-﻿tutorialApp.factory('contatoDataService', ['$http', '$q',
+﻿tutorialApp.factory('contactDataService', ['$http', '$q',
 function ($http, $q) {
     var _contacts = [];
 
     var _getContacts = function () {
         var deferred = $q.defer();
-        var controllerQuery = "contato/GetContatos";
+        var controllerQuery = "contact/GetContacts";
 
         $http.get(controllerQuery)
           .then(function (result) {
@@ -21,7 +21,8 @@ function ($http, $q) {
 
     var _addContact = function (_contact) {
         var deferred = $q.defer();
-        var controllerQuery = "contato/AddContato";
+        var controllerQuery = "contact/AddContact";
+        alert("Salva");
 
         $http.post(controllerQuery, _contact)
           .then(function (result) {
@@ -38,7 +39,7 @@ function ($http, $q) {
 
     var _updateContact = function (_contact) {
         var deferred = $q.defer();
-        var controllerQuery = "contato/UpdateContato";
+        var controllerQuery = "contact/UpdateContact";
 
         $http.post(controllerQuery, _contact)
           .then(function (result) {
@@ -52,8 +53,11 @@ function ($http, $q) {
     };
 
     var _deleteContact = function (id) {
+
+        alert(id);
+
         var deferred = $q.defer();
-        var controllerQuery = "contato/DeleteContato/" + id;
+        var controllerQuery = "contact/DeleteContact/" + id;
 
         $http.post(controllerQuery)
           .then(function (result) {
@@ -68,6 +72,7 @@ function ($http, $q) {
 
     function _findContactById(id) {
         var found = null;
+
         $.each(_contacts, function (i, contact) {
             if (contact.id == id) {
                 found = contact;
@@ -79,9 +84,9 @@ function ($http, $q) {
 
     //Expose methods and fields through revealing pattern
     return {
-        contatos: _contacts,
+        contacts: _contacts,
         getContacts: _getContacts,
-        addContato: _addContact,
+        addContact: _addContact,
         updateContact: _updateContact,
         deleteContact: _deleteContact,
         findContactById: _findContactById

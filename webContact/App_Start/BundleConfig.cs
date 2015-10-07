@@ -34,13 +34,14 @@ namespace webContact
             bundles.Add(new ScriptBundle("~/bundles/tutorialApp").Include(
                        "~/App/tutorialApp.js",
                        "~/App/appRoute.js",
-                       "~/App/contato/service/contatoDataService.js",
-                       "~/App/contato/controller/contatoController.js"));
+                       "~/App/contact/service/contactDataService.js",
+                       "~/App/contact/controller/contactController.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/bootstrap.footer.bottom.css"));
+                      "~/Content/bootstrap.footer.bottom.css",
+                      "~/Content/toaster.css"));
 
             BundleTable.EnableOptimizations = true;
        }

@@ -117,29 +117,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ContatoController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JsonController.cs" />
-    <Compile Include="Models\Contato.cs" />
-    <Compile Include="Models\ContatoContext.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\appRoute.js" />
-    <Content Include="App\contato\controller\contatoController.js" />
-    <Content Include="App\contato\html\contatoForm.html" />
-    <Content Include="App\contato\html\contatoList.html" />
-    <Content Include="App\contato\html\deleteModal.html" />
-    <Content Include="App\contato\service\contatoDataService.js" />
-    <Content Include="App\home\sobre.html" />
+    <Content Include="App\contact\controller\contactController.js" />
+    <Content Include="App\contact\html\contactForm.html" />
+    <Content Include="App\contact\html\contactsList.html" />
+    <Content Include="App\contact\html\deleteModal.html" />
+    <Content Include="App\contact\service\contactDataService.js" />
+    <Content Include="App\home\about.html" />
     <Content Include="App\home\index.html" />
     <Content Include="App\tutorialApp.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.footer.bottom.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\toaster.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
