@@ -22,8 +22,6 @@ function ($http, $q) {
     var _addContact = function (_contact) {
         var deferred = $q.defer();
         var controllerQuery = "contact/AddContact";
-        alert("Salva");
-
         $http.post(controllerQuery, _contact)
           .then(function (result) {
               //Success
@@ -53,9 +51,6 @@ function ($http, $q) {
     };
 
     var _deleteContact = function (id) {
-
-        alert(id);
-
         var deferred = $q.defer();
         var controllerQuery = "contact/DeleteContact/" + id;
 

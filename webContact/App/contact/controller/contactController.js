@@ -90,8 +90,6 @@ tutorialApp.controller('contactEditController',
         };
 
         $scope.modalDelete = function (size, contact) {
-            alert("ateste");
-
             var modalInstance = $modal.open({
                 templateUrl: 'app/contact/html/deleteModal.html',
                 controller: function ($scope, $modalInstance, contact) {
@@ -103,7 +101,7 @@ tutorialApp.controller('contactEditController',
                     $scope.ok = function (contact) {
                         contactDataService.deleteContact(contact.id)
                         .then(function () {
-                            $window.location = "#/mycontacts";
+                            $window.location = "#/contacts";
                             $modalInstance.close(contact);
                         },
                         function () {

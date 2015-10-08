@@ -27,9 +27,7 @@ namespace webContact
                       "~/Scripts/Angular1.3.5/angular-animate.js",
                       "~/Scripts/Angular1.3.5/angular-ui-bootstrap.js",
                       "~/Scripts/Angular1.3.5/Plugins/loading-bar.js",
-                      "~/Scripts/Angular1.3.5/Plugins/toaster.js",
-                      "~/Scripts/Angular1.3.5/Plugins/angular-md5.js",
-                      "~/Scripts/Angular1.3.5/Plugins/angular-gravatar.js"));
+                      "~/Scripts/Angular1.3.5/Plugins/toaster.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/tutorialApp").Include(
                        "~/App/tutorialApp.js",
@@ -41,9 +39,8 @@ namespace webContact
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/bootstrap.footer.bottom.css",
+                      "~/Content/loading-bar.css",
                       "~/Content/toaster.css"));
-
-            BundleTable.EnableOptimizations = true;
        }
     }
 }
