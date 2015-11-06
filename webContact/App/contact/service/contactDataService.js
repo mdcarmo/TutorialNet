@@ -1,5 +1,4 @@
-﻿tutorialApp.factory('contactDataService', ['$http', '$q',
-function ($http, $q) {
+﻿tutorialApp.factory('contactDataService', ['$http', '$q',function ($http, $q) {
     var _contacts = [];
 
     var _getContacts = function () {
@@ -24,7 +23,6 @@ function ($http, $q) {
         var controllerQuery = "contact/AddContact";
         $http.post(controllerQuery, _contact)
           .then(function (result) {
-              //Success
               deferred.resolve();
           },
           function (error) {
@@ -67,7 +65,6 @@ function ($http, $q) {
 
     function _findContactById(id) {
         var found = null;
-
         $.each(_contacts, function (i, contact) {
             if (contact.id == id) {
                 found = contact;

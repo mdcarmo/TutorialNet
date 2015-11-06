@@ -23,6 +23,11 @@
         controller: "contactEditController"
     }),
 
+    $routeProvider.when('/users', {
+        templateUrl: "app/user/html/usersList.html",
+        controller: "userController"
+    }),
+
     $routeProvider.otherwise({
         redirectTo: '/'
     });

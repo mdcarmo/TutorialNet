@@ -137,6 +137,9 @@
     <Content Include="App\home\about.html" />
     <Content Include="App\home\index.html" />
     <Content Include="App\tutorialApp.js" />
+    <Content Include="App\user\controller\userController.js" />
+    <Content Include="App\user\html\usersList.html" />
+    <Content Include="App\user\service\userDataService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.footer.bottom.css" />
     <Content Include="Content\bootstrap.min.css" />

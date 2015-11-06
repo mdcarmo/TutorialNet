@@ -33,7 +33,9 @@ namespace webContact
                        "~/App/tutorialApp.js",
                        "~/App/appRoute.js",
                        "~/App/contact/service/contactDataService.js",
-                       "~/App/contact/controller/contactController.js"));
+                       "~/App/contact/controller/contactController.js",
+                       "~/App/user/service/userDataService.js",
+                       "~/App/user/controller/userController.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
